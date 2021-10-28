@@ -1,0 +1,17 @@
+const express = require('express');
+const cookieparser=require('cookie-parser');
+
+const app=express();
+app.use(cookieparser());
+
+
+
+app.get('/user/:id', (req, res)=>{
+    console.log(req.cookies);
+    res.send("Hello World");
+})
+
+app.listen(3000, ()=>{
+    console.log('listening on port 3000');
+
+});
